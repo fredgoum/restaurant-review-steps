@@ -12,6 +12,7 @@ class RestaurantReviewApp extends React.Component {
       filteredRestaurants: [], // filter results
       restaurantsInBounds: [], // restaurants visible in map
       loading : false, // for data loading
+      placeIds: [],
       fields: {
         currentLocation: {
         }
@@ -25,22 +26,126 @@ class RestaurantReviewApp extends React.Component {
     this.addNewRestaurant = this.addNewRestaurant.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    try {
+      const { lat, lng } = await this.getcurrentLocation();
+      this.setState(prev => ({
+        fields: {
+          ...prev.fields,
+          currentLocation: {
+            lat,
+            lng
+          }
+        },
+      }));
+    }
+    catch { // If geolocalisation error, display local data
+      alert("Vérifiez votre connectivité ou votre GPS. En attendant, nous allons vous montrer des restaurants à Bruxelles");
+      this.setState({restaurantList: restaurantList});
+      this.setState({filteredRestaurants: restaurantList});
+      this.setState({restaurantsInBounds: restaurantList});
+      this.setState({loading: true});
+      // On positionne l'utilisateur sur la position par default
+      const { lat, lng } = {lat: 50.85045, lng: 4.34878,};
+      this.setState(prev => ({
+        fields: {
+          ...prev.fields,
+          currentLocation: {
+            lat,
+            lng
+          }
+        },
+      }));
+    } 
+  }
+  // Get user current location
+  getcurrentLocation() {
+    if (navigator && navigator.geolocation) {
+      return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(pos => {
+          const coords = pos.coords;
+          resolve({
+            lat: coords.latitude,
+            lng: coords.longitude
+          });
+
+          this.getGooglePlaceRestaurants(coords);
+        });
+      });
+    }
+    // If navigator geolocalisation is not allowed, display local data
+    alert("Vous n'avez pas accepté d'être géolocalisé. Nous allons vous montrer des restaurants à Bruxelles")
     this.setState({restaurantList: restaurantList});
     this.setState({filteredRestaurants: restaurantList});
     this.setState({restaurantsInBounds: restaurantList});
     this.setState({loading: true});
-    // On positionne l'utilisateur sur la position par default
-    const { lat, lng } = {lat: 50.85045, lng: 4.34878,};
-    this.setState(prev => ({
-      fields: {
-        ...prev.fields,
-        currentLocation: {
-          lat,
-          lng
+    return {
+      lat: 50.85045,
+      lng: 4.34878,
+    };
+  }
+  // Gets API data from Google places's restaurants
+  async getGooglePlaceRestaurants(coords) {
+    try {
+      const radius = 150000;
+      const proxyurl = `https://cors-anywhere.herokuapp.com/`;
+      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=`
+        +`${coords.latitude},${coords.longitude}&radius=${radius}&type=restaurant&keyword=cruise&key=${process.env.REACT_APP_MAP_API_KEY}`;
+
+      const res = await fetch(proxyurl + url);
+      if (! res.ok) {
+          throw new Error(res.status);
+      }
+      const data = await res.json();
+      const placesIds = data.results.map(restaurant => restaurant.place_id);
+      this.setState({placeIds: placesIds}, () => {
+        this.getGooglePlaceRestaurantsInfos();
+      });
+    } catch (error) { // e.g if too many requests, display local data
+      alert("Vous avez surchargé le serveur. Veuillez recharger la page ultérieurement. En attendant, nous allons vous montrer des restaurants à Bruxelles")
+      
+      this.setState({restaurantList: restaurantList});
+      this.setState({filteredRestaurants: restaurantList});
+      this.setState({restaurantsInBounds: restaurantList});
+      this.setState({loading: true});
+      const { lat, lng } = {lat: 50.85045, lng: 4.34878,};
+      this.setState(prev => ({
+        fields: {
+          ...prev.fields,
+          currentLocation: {
+            lat,
+            lng
+          }
+        },
+      }));
+      console.log(error);
+    }
+  }
+  // Gets informations of each restaurant
+  async getGooglePlaceRestaurantsInfos() { 
+    const restaurantsInfos = [];
+    const placesIds = this.state.placeIds;
+    await Promise.all(placesIds.map(async (placeId) => {
+      try {
+        const proxyurl = `https://cors-anywhere.herokuapp.com/`
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${process.env.REACT_APP_MAP_API_KEY}`;
+        
+        const res = await fetch(proxyurl + url);
+        if (! res.ok) {
+            throw new Error(res.status);
         }
-      },
+        const data = await res.json();
+        data.result.latitude = data.result.geometry.location.lat;
+        data.result.longitude = data.result.geometry.location.lng;
+        restaurantsInfos.push(data.result);
+      } catch (error) {
+        console.log(error);
+      }
     }));
+    this.setState({restaurantList: restaurantsInfos});
+    this.setState({filteredRestaurants: restaurantsInfos});
+    this.setState({restaurantsInBounds: restaurantsInfos});
+    this.setState({loading: true});
   }
   // Filter restaurants according to the restaurants in map bounds and stars selected
   filterRestaurants() {
