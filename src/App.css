@@ -39,6 +39,19 @@
   position: absolute;
   bottom: 0px;
 }
+#btn-give-review-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+#btn-give-review {
+  border: hidden;
+  border-radius: 10px;
+  height: 40px;
+  background: #0169aa;
+  color: white;
+}
 #results-found {
   display: flex;
   justify-content: space-between;
@@ -62,6 +75,19 @@
     font-family: arial,sans-serif;
     overflow-y: scroll;
     height: 100%;
+  }
+  #newRestaurant {
+    position: relative;
+    top: 30px;
+    right: 45%;
+    left: 5%;
+    width: 450px;
+    background: #fff;
+    border-bottom: 5px solid;
+    border-bottom-color: #fcb300;
+    border-radius: 10px;
+    font-family: arial,sans-serif;
+    text-align: center;
   }
   #mapAndRestaurants {
     display: flex;

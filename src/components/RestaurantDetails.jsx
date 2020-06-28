@@ -1,8 +1,17 @@
 import React from 'react';
 import RestaurantStreetview from './RestaurantStreetview';
 import Reviews from './Reviews';
+import NewReview from './NewReview';
 
 class RestaurantDetails extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newReviewSectionShown: false,
+      userName: '',
+      newReview: '',
+    }
+  }
   // Get all informations about restaurant selected
   selectedRestaurant() {
     return this.props.restaurantList.find(restaurant => restaurant.id === this.props.restaurantId);
@@ -28,9 +37,31 @@ class RestaurantDetails extends React.Component {
         <Reviews 
           restaurantList={this.props.restaurantList} 
           restaurantId={this.props.restaurantId} 
+          newReview={this.state.newReview}
+          userName={this.state.userName}
           hideRestaurantDetails={() => this.props.hideRestaurantDetails()}
         >
         </Reviews>
+
+        <div id="btn-give-review-container">
+          <button 
+            id="btn-give-review"
+            onClick={() => this.setState({newReviewSectionShown: true})}
+          >
+            Donner un avis
+          </button>
+        </div>
+        {
+          this.state.newReviewSectionShown ? 
+            <NewReview 
+              restaurantList={this.props.restaurantList}
+              restaurantId={this.props.restaurantId} 
+              hideNewReviewSection={() => this.setState({newReviewSectionShown: false})}
+            >
+            </NewReview>
+          :
+          null
+        }
       </div>
     );
   }

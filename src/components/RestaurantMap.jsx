@@ -1,11 +1,15 @@
 import React from "react";
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import NewRestaurant from './NewRestaurant';
 import marker from '../assets/marquer.png';
 
 export class RestaurantMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      newRestaurantWindowIsShown: false,
+      newRestaurantLat: 0,
+      newRestaurantLng: 0,
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
@@ -13,7 +17,9 @@ export class RestaurantMap extends React.Component {
 
     this.clickOnMarker = this.clickOnMarker.bind(this);
     this.closeInfoWindow = this.closeInfoWindow.bind(this);
+    this.ShowNewRestaurantWindow = this.ShowNewRestaurantWindow.bind(this);
     this.zoomOrDrapMap = this.zoomOrDrapMap.bind(this);
+    this.getNewRestaurant = this.getNewRestaurant.bind(this);
   }
   // Click on marker to display InfoWindow of a restaurant
   clickOnMarker(props, marker, e) {
@@ -32,6 +38,13 @@ export class RestaurantMap extends React.Component {
       });
     }
   }
+  // Show Window of restaurant if right click on map
+  ShowNewRestaurantWindow(ref, map, e) {
+    const location = e.latLng;
+    this.setState({newRestaurantLat: location.lat()});
+    this.setState({newRestaurantLng: location.lng()});
+    this.setState({ newRestaurantWindowIsShown: true});
+  };
   // Get restaurants visible in map during a map drag or a map zoom
   zoomOrDrapMap(ref, map, e) {
     const restaurantsInBounds = this.props.restaurantList.filter(function (restaurant) {
@@ -43,6 +56,10 @@ export class RestaurantMap extends React.Component {
     });
     this.props.getRestaurantsInBounds(restaurantsInBounds);
   }
+  // Get all informations about new restaurant
+  getNewRestaurant(newRestaurant) {
+    this.props.getNewRestaurant(newRestaurant)
+  }
 
   render() {
     return (
@@ -51,6 +68,7 @@ export class RestaurantMap extends React.Component {
           google={this.props.google} zoom={10}
           initialCenter={this.props.currentLocation}
           center={this.props.currentLocation}
+          onRightclick={this.ShowNewRestaurantWindow}
           onZoomChanged={this.zoomOrDrapMap}
           onDragend={this.zoomOrDrapMap}
         >
@@ -82,6 +100,19 @@ export class RestaurantMap extends React.Component {
             </div>
           </InfoWindow>
         </Map>
+
+        {
+          this.state.newRestaurantWindowIsShown ? 
+            <NewRestaurant
+              hideNewRestaurantWindow={() => this.setState({newRestaurantWindowIsShown: false})}
+              newRestaurantLat={this.state.newRestaurantLat}
+              newRestaurantLng={this.state.newRestaurantLng}
+              getNewRestaurant={this.getNewRestaurant}
+            >
+            </NewRestaurant>
+          :
+          null
+        }
       </div>
     );
   }

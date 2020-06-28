@@ -22,6 +22,7 @@ class RestaurantReviewApp extends React.Component {
 
     this.getStarsSelected = this.getStarsSelected.bind(this);
     this.getRestaurantsInBounds= this.getRestaurantsInBounds.bind(this);
+    this.addNewRestaurant = this.addNewRestaurant.bind(this);
   }
 
   componentDidMount() {
@@ -71,6 +72,14 @@ class RestaurantReviewApp extends React.Component {
       return averageRatings;
     }
   }
+  // Add a new restaurant to the list of restaurants
+  addNewRestaurant(newRestaurant) {
+    const newRestaurantList = this.state.restaurantsInBounds;
+    newRestaurantList.unshift(newRestaurant);
+    this.setState({restaurantsInBounds: newRestaurantList}, () => {
+      this.filterRestaurants();
+    });
+  }
   // Allows to displays map or restaurants on mobile screen
   showMapOrResturants() {
     const restaurantMap = document.getElementById("map");
@@ -98,6 +107,7 @@ class RestaurantReviewApp extends React.Component {
               restaurantList={this.state.restaurantList}
               filteredRestaurants={this.state.filteredRestaurants}
               getRestaurantsInBounds={this.getRestaurantsInBounds}
+              getNewRestaurant={this.addNewRestaurant}
               currentLocation={this.state.fields.currentLocation}
             >
             </RestaurantMap>
