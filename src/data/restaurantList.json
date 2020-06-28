@@ -1,0 +1,312 @@
+[
+  {
+    "id":1,
+    "name":"G Spud",
+    "formatted_address":"Rue Jourdan 9, 1060 Saint-Gilles, Belgique",
+    "latitude":50.834716,
+    "longitude":4.355319699999999,
+    "website" : "http://www.g-spud.com/",
+    "reviews":[
+      {
+        "author_name" : "Fred S",
+        "rating" : 5,
+        "text" : "Un personnel super sympa.\nDes plats frais, on se dit qu'on en mangerais bien un deuxième mais quand on a finis son plat, on est calé. \nEt pour pas cher, 8-10 euros, on ferais pas mieux a la maison.\nEn tant que balayeur,  j'y vais autant que possible. \nLes fast-food à côté font pâle figure."
+      },
+      {
+        "author_name" : "Isa Belle",
+        "rating" : 5,
+        "text" : "Petit coup de cœur du confinement ;) Je ne connaissais pas mais j’adore le concept ! Une grosse patate avec de la salade et ce que vous voulez ;) Je suis une fan de la Liégeoise ! C’est parfait pour changer d’un sandwiche à midi ! La vendeuse est vraiment super sympa, une petite pépite près de Louise 👌🏻"
+     },
+     {
+        "author_name" : "Henri Vander Maren",
+        "rating" : 5,
+        "text" : "Vendeuse agréable, très bon chocolat chaud et le crumble était délicieux. Jolie atmosphère. Paiement que par carte très pratique."
+     },
+     {
+        "author_name" : "Steph Mimi Alenka Borisko s",
+        "rating" : 5,
+        "text" : "Super bon,et patronne Super Sympa.Continue comme ca!!!!!Ce sont les deux agent STIB😀😀"
+     },
+     {
+        "author_name" : "valentin bourgois",
+        "rating" : 5,
+        "text" : "C'est la 4eme fois qui j'y vais. Toujours aussi plaisant et délicieux ! Je recommande ce concept peu commun et pourtant tellement belge"
+     }
+    ]
+  },
+  {
+    "id":2,
+    "name":"Le Pain Quotidien",
+    "formatted_address":"Avenue du Port 86C, 1000 Bruxelles, Belgique",
+    "latitude":50.8648307,
+    "longitude":4.3491892,
+    "website" : "https://www.lepainquotidien.com/be/fr/locations/tour_&_taxis/avenue-du-port-86c?utm_source=google&utm_medium=business-listing&utm_campaign=",
+    "reviews":[
+      {
+        "author_name" : "Samuel Durieux",
+        "rating" : 5,
+        "text" : "Toujours extrêmement bien accueilli, je suis maintenant un client fidèle. Les produits sont de qualité, la cuisine excellente. Un régal pour toute la famille !"
+      },
+      {
+        "author_name" : "Kristof B",
+        "rating" : 5,
+        "text" : "Très bel endroit, les petits déjeuner sont très bons et très copieux.\nJe vous recommande de chocolat chaud."
+      },
+      {
+        "author_name": "Michel Gaillard",
+        "rating":3,
+        "text":"Pas terrible. Néamoins, nous nous sommes régalé !"
+      },
+      {
+        "author_name" : "Isabelle Lenoir",
+        "rating" : 5,
+        "text" : "Première découverte et pas la dernière très chouete endroit."
+      }
+    ]
+  },
+  {
+    "id":3,
+    "name":"Toshiro",
+    "formatted_address":"Rue de la Source 73, 1060 Bruxelles, Belgique",
+    "latitude":50.83094089999999,
+    "longitude":4.3532651,
+    "website" : "http://toshiro.be/fr",
+    "reviews":[
+      {
+        "author_name" : "Myriam de Loen d'Enschede",
+        "rating" : 5,
+        "text" : "Accueil chaleureux et \"comme si nous arrivions chez de vieux et très chers amis\". J'ai savouré chaque bouchée,  chaque gorgée de vos vins délicieux.  J'adore cette formule du choix du nombre de plats avec chaque fois son vin ! Je veux revenir..... très vite ! Merci pour cette très  belle soirée !!!!!"
+     },
+     {
+        "author_name" : "Phuong Anh Nguyen",
+        "rating" : 5,
+        "text" : "La nourriture y est succulente et l'accueil au top :)) Je recommande !"
+     }
+    ]
+  },
+  {
+    "id":4,
+    "name":"Dinner in the Sky",
+    "formatted_address":"Avenue du Port 1, 1000 Bruxelles, Belgique",
+    "latitude":50.860464,
+    "longitude":4.347040300000001,
+    "website" : "http://dinnerinthesky.be/",
+    "reviews":[
+      {
+        "author_name" : "Imad Thailor",
+        "rating" : 5,
+        "text" : "Very nice"
+      },
+      {
+        "author_name": "Lartiste Le Grand",
+        "rating":4,
+        "text":"Un vrai restau pépite ! Sans rire, c'était bien !"
+      },
+      {
+        "author_name": "Michel Gaillard",
+        "rating":3,
+        "text":"Pas terrible. Néamoins, nous nous sommes régalé !"
+      }
+    ]
+  },
+  {
+    "id":5,
+    "name":"Scott's Bar",
+    "formatted_address":"Rue Montagne aux Herbes Potagères 2, 1000 Bruxelles, Belgique",
+    "latitude":50.8488145,
+    "longitude":4.3561231,
+    "website" : "https://www.scottsbarbrussels.com/",
+    "reviews":[
+      {
+        "author_name" : "Nadine",
+        "rating" : 5,
+        "text" : "Beau choix sur la carte. Leurs sandwiches sont délicieux, produits frais.    La serveuse est très sympa.  Et le meilleur chocolat chaud de Bruxelles"
+      },
+      {
+        "author_name" : "Morena :",
+        "rating" : 4,
+        "text" : "En sortant de la Galerie de La Reine, je suis tombé sur ce café. L’ambiance, le décor m’ont toute de suite mise à l’aise, la carte propose un large choix. Je me suis penché surtout sur les chocolats chauds avec ce froid et c’était vraiment agréable et bon."
+      },
+      {
+        "author_name" : "Camille Baily",
+        "rating" : 4,
+        "text" : "Chouette bar ! A tester: les nachos."
+      },
+      {
+        "author_name" : "Angélique Zawada",
+        "rating" : 3,
+        "text" : "Bar sympa, sport diffusé sur grand écran. Service lent mais sympathique. \nNous avons été un samedi soir, nous avons eu droit a un concert vraiment génial. Ambiance bruyante mais vraiment bien.\nEn bref un endroit où il faut venir à plusieurs. \nPaiement par carte accepté."
+      },
+      {
+        "author_name": "Lartiste Le Grand",
+        "rating":4,
+        "text":"Un vrai restau pépite ! Sans rire, c'était bien !"
+      },
+      {
+        "author_name": "Michel Gaillard",
+        "rating":3,
+        "text":"Pas terrible. Néamoins, nous nous sommes régalé !"
+      },
+      {
+        "author_name" : "Olivier Lejour",
+        "rating" : 4,
+        "text" : "Très bonne ambiance. Surtout le soir, À deux pas de la grand place de BXL."
+      }
+    ]
+  },
+  {
+    "id":6,
+    "name":"Divan Lokanta",
+    "formatted_address":"Chaussée de Haecht 30, 1210 Saint-Josse-ten-Noode, Belgique",
+    "latitude":50.8550397,
+    "longitude":4.3676414,
+    "website": "",
+    "reviews":[
+      {
+        "author_name" : "Nesrin Mahmoud",
+        "rating" : 5,
+        "text" : "Excellent service! Plats succulents! A conseiller vivement!"
+      },
+      {
+        "author_name" : "naser nouromid",
+        "rating" : 5,
+        "text" : "Je mange très bien."
+      },
+      {
+        "author_name" : "françois Perl",
+        "rating" : 5,
+        "text" : "Super petite cantine comme à Istanbul (ou ailleurs). Plats mijotés, bonnes soupes et prix très doux."
+      },
+      {
+        "author_name" : "Nour Khidir",
+        "rating" : 5,
+        "text" : "Service personnel et les plats sont excellents au top"
+      },
+      {
+        "author_name" : "Docquir Jean - Paul",
+        "rating" : 5,
+        "text" : "Tres bon service et fraicheur de la nourriture. Bonne hygiene. Endroit typique et de qualité.\nMerci"
+      }
+    ]
+  },
+  {
+    "id":7,
+    "name":"La Buvette",
+    "formatted_address":"Chaussée d'Alsemberg 108, 1060 Saint-Gilles, Belgique",
+    "latitude":50.8233513,
+    "longitude":4.343128399999999,
+    "website" : "http://www.la-buvette.be/",
+    "reviews":[
+      {
+        "author_name" : "Mick Vrsn",
+        "rating" : 4,
+        "text" : "Nous avons opté pour le menu 6 services et ce fut une très bonne expérience. \nLes plats sont recherchés et nous font découvrir des associations de produits et de goûts originaux et qui fonctionnent bien ensemble.\nNiveau ambiance on se sent un peu \"comme à la maison\".\nService agréable mais sans chichis..."
+      },
+      {
+        "author_name" : "Marc Kobs",
+        "rating" : 2,
+        "text" : "Je n'ai sans doute rien compris..mais pour un menu facturé 49 euros nous avons reçu 3 tranches de betteraves un peu d'avoine ,une soupe de topinambours ,une portion des plus réduite de cabillaud \nBeaucoup de chapelure (crumble) et une toute fine escalope de faisan.\nUn verre de vin (générique) trés peu rempli facturé 10 euros, je trouvais notre addition très salée (190 à deux)pour ce que nous avons reçu.!."
+      },
+      {
+        "author_name" : "Gabrielle Clermont",
+        "rating" : 5,
+        "text" : "Des plats tous aussi surprenants que délicieux. Un restaurant qui mériterait d être étoilé, à prix abordable! Je recommande vivement !!"
+      }
+    ]
+  },
+  {
+    "id":8,
+    "name":"Saint Laurent",
+    "formatted_address":"Rue des Bouchers 5, 1000 Bruxelles, Belgique",
+    "latitude":50.848313,
+    "longitude":4.3535454,
+    "website": "",
+    "reviews":[
+      {
+        "author_name" : "JiefSourd",
+        "rating" : 1,
+        "text" : "Attrape touriste, plats de cantine, tout est sorti du congélateur... les crevettes ne sont même pas préparées! \nNe vous laissez pas berner par les rabatteurs très agressifs..."
+     },
+     {
+        "author_name" : "Jean Michel",
+        "rating" : 5,
+        "text" : "Super choix et très très bon.  Je recommande"
+     },
+     {
+        "author_name" : "Laurent Arnoux",
+        "rating" : 3,
+        "text" : "Bon petit restaurant, il ne faut pas s'attendre à de la grande restaurations mais on y mange bien pour un prix honnête. \nAgréable la fausse cheminée surtout lorsqu'il fait froid dehors"
+     },
+     {
+        "author_name" : "Chabane Degdag",
+        "rating" : 1,
+        "text" : "Nul !!!! Fuyez !"
+     },
+     {
+        "author_name" : "stof Mostafaa",
+        "rating" : 5,
+        "text" : "J'adore"
+     }
+    ]
+  },
+  {
+    "id":9,
+    "name":"Bagl",
+    "formatted_address":"Boulevard Lambermont 1, 1000 Bruxelles, Belgique",
+    "latitude":50.8794295,
+    "longitude":4.3726767,
+    "website": "",
+    "reviews":[
+      {
+        "author_name" : "Nicolas Elavia",
+        "rating" : 5,
+        "text" : "Encore un bel endroit pour bien manger et un accueil chaleureux et de qualité 😊"
+     },
+     {
+        "author_name" : "Lola Koala",
+        "rating" : 1,
+        "text" : "Très emballée au début et très vite déçue au final... heureusement y a d autres établissements pour les Bagels."
+     },
+     {
+        "author_name" : "Nicolas Rogge",
+        "rating" : 1,
+        "text" : "tu arrives à 18.58, y a personne au comptoir. et après 5 min d’attente y a un serveur qui arrive et qui te fait “je prends plus les commandes”. même pas “bonsoir” ou “excusez-moi mais”. Or le shop férié à 19.30. bravo le service!!!"
+     },
+     {
+        "author_name" : "Patricia.G",
+        "rating" : 2,
+        "text" : "Le service et la présentation n'était pas extra  comparé au City 2 qui avait l'air déjà plus américain, mais la nourriture était bonne\nPS : le serveur m'a dit de venir chercher mon ticket après la commande et lorsque je suis revenu pour prendre justement mon ticket et ma commande il m'a dit que mon ticket avait été jeté depuis longtemps"
+     }
+    ]
+  },
+  {
+    "id":10,
+    "name":"Sofitel Brussels Le Louise",
+    "formatted_address":"Avenue de la Toison d'Or 40, 1050 Brussels, Belgique",
+    "latitude":50.83613829999999,
+    "longitude":4.3570441,
+    "website" : "https://all.accor.com/lien_externe.svlt?goto=fiche_hotel&code_hotel=1071&merchantid=seo-maps-BE-1071&sourceid=aw-cen",
+    "reviews":[
+      {
+        "author_name" : "Alain Nothomb",
+        "rating" : 4,
+        "text" : "Très pro. Excellent accueil.  Qualité"
+     },
+     {
+        "author_name" : "Julie Descamps",
+        "rating" : 5,
+        "text" : "Nous avons passe un excellent séjour ! Accueil excellent. Très bien situé. La chambre très bien. Seul bémol, chambre pour deux, et un seul verre, une seule tasse 🙄"
+     },
+     {
+        "author_name" : "clel so",
+        "rating" : 5,
+        "text" : "Excellent hôtel. \nAyant pour habitude d’y séjourner, je le recommande à 100%. \nNous avons été ravie des conseils donnés par Mr Hamid, très sympathique et jovial! Merci."
+     },
+     {
+        "author_name" : "Michel DUMONT",
+        "rating" : 4,
+        "text" : "Endroit très calme pour prendre un verre. Gentillesse du personnel. Salle moins accueillante que la précédente. Attendons la fin des travaux dans l\"ancienne salle."
+     }
+    ]
+  }
+]
